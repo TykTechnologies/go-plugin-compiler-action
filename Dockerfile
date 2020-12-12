@@ -1,4 +1,4 @@
-FROM tykio/tyk-build-env:latest
+FROM golang:1.12.17
 LABEL io.tyk.vendor="Tyk" \
       version="1.0" \
       description="plugin build in a Github action"
