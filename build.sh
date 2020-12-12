@@ -5,8 +5,8 @@ set -xe
 plugin_name=$1
 plugin_path=$(date +%s)-${plugin_name}
 
-if [[ -z $plugin_path ]]; then
-    echo Missing plugin path
+if [[ -z $plugin_name ]]; then
+    echo Missing plugin name
     exit 1
 fi
 
