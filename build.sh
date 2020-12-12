@@ -10,9 +10,6 @@ if [[ -z $plugin_name ]]; then
     exit 1
 fi
 
-pwd
-ls -R
-
 yes | cp -r * $PLUGIN_BUILD_PATH
 yes | cp -r vendor $GOPATH/src || true \
 rm -rf $PLUGIN_BUILD_PATH/vendor

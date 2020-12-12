@@ -5,9 +5,9 @@ LABEL io.tyk.vendor="Tyk" \
 
 ENV GOPATH=/go
 ENV TYK_GW_PATH=${GOPATH}/src/github.com/TykTechnologies/tyk
-# This directory will contain the plugin source and will be
-# mounted from the host box by the user using docker volumes
 ENV PLUGIN_BUILD_PATH=/go/src/plugin-build
+
+RUN mkdir -p $GOPATH $TYK_GW_PATH $PLUGIN_BUILD_PATH
 
 COPY build.sh /build.sh
 
