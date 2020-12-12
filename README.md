@@ -19,7 +19,7 @@ None
 ## Example usage
 
 ``` yaml
-uses: TykTechnologies/go-plugin-compiler-action@master
+uses: TykTechnologies/go-plugin-compiler-action@v1
 with:
   gw_tag: v3.1.1
   plugin_name: my-plugin.so
