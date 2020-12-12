@@ -1,0 +1,16 @@
+name: 'tyk-go-plugin'
+description: 'Build go plugins for Tyk gateway'
+inputs:
+  gw_tag:
+    description: 'Version of the gateway to build against'
+    required: true
+    default: 'v3.0.2'
+  path:
+    description: 'Path name for the shared library'
+    required: true
+    default: 'tyk-go-plugin.so'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.gw-version }}
