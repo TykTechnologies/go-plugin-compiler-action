@@ -9,6 +9,9 @@ inputs:
     description: 'Name for the shared library'
     required: true
     default: 'tyk-go-plugin.so'
+  plugin_source_path:
+    description: 'The subdirectory that the plugin source is in with a trailing /'
+    required: false
 runs:
   using: 'docker'
   image: 'Dockerfile'

@@ -13,14 +13,43 @@ The default is the latest released LTS version which is currently `v3.0.1`
 
 Due to the implementation of the plugin compiler, this cannot be a pathname, just a file name.
 
-## Outputs
-None
+### `plugin_source_path`
+The subdirectory that the plugin source is in with a trailing /. Defaults to the root of the repo.
 
-## Example usage
+## Outputs
+None. The plugin is availble in the workspace root for further processing.
+
+## Minimal example
 
 ``` yaml
-uses: TykTechnologies/go-plugin-compiler-action@v1
-with:
-  gw_tag: v3.1.1
-  plugin_name: my-plugin.so
+- uses: TykTechnologies/go-plugin-compiler-action@v1.1
+  with:
+    gw_tag: v3.1.1
+    plugin_name: my-plugin.so
 ```
+
+## Fuller example
+
+``` yaml
+name: Build
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  ddb:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+        
+      - uses: TykTechnologies/go-plugin-compiler-action@main
+        with:
+          gw_tag: v3.1.1
+          name: basicauth-ddb.so
+
+```
+
+This workflow will leave basicauth.ddb.so in the workspace root. Which you can use further. See https://github.com/alephnull/tyk-dynamodbauth for an actual example.
