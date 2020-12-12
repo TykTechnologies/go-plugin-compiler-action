@@ -5,8 +5,8 @@ inputs:
     description: 'Version of the gateway to build against'
     required: true
     default: 'v3.0.2'
-  path:
-    description: 'Path name for the shared library'
+  name:
+    description: 'Name for the shared library'
     required: true
     default: 'tyk-go-plugin.so'
 runs:

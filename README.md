@@ -9,7 +9,9 @@ Github Action will build a go plugin for a given gateway version
 The default is the latest released LTS version which is currently `v3.0.1`
 
 ### `plugin_name`
-**Required** The pathname of the output shared library
+**Required** The name of the output shared library
+
+Due to the implementation of the plugin compiler, this cannot be a pathname, just a file name.
 
 ## Outputs
 None
