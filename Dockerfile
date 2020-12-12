@@ -9,5 +9,7 @@ ENV TYK_GW_PATH=${GOPATH}/src/github.com/TykTechnologies/tyk
 # mounted from the host box by the user using docker volumes
 ENV PLUGIN_BUILD_PATH=/go/src/plugin-build
 
+COPY build.sh /build.sh
+
 ENTRYPOINT ["/build.sh"]
 
